@@ -1,4 +1,4 @@
-const DATE_REGEXP = /^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})$/
+const DATE_REGEXP = /^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})(?:\.(\d{2}))?[zZ]?$/
 
 /**
  * Pad EXIF date formatting.
@@ -33,7 +33,7 @@ export function parse (value: string): Date {
   date.setUTCHours(Number(m[4]))
   date.setUTCMinutes(Number(m[5]))
   date.setUTCSeconds(Number(m[6]))
-  date.setUTCMilliseconds(0)
+  date.setUTCMilliseconds((Number(m[7]) * 10) || 0)
 
   return date
 }
@@ -41,13 +41,14 @@ export function parse (value: string): Date {
 /**
  * Format `Date` into EXIF format.
  */
-export function format (value: Date): string {
+export function format (value: Date, subsecond?: boolean): string {
   if (isNaN(value.getTime())) {
     return
   }
 
   const date = `${pad(value.getUTCFullYear(), 4)}:${pad(value.getUTCMonth() + 1)}:${pad(value.getUTCDate())}`
   const time = `${pad(value.getUTCHours())}:${pad(value.getUTCMinutes())}:${pad(value.getUTCSeconds())}`
+  const suffix = subsecond ? `.${Math.round(value.getUTCMilliseconds() / 10)}` : ''
 
-  return `${date} ${time}`
+  return `${date} ${time}${suffix}`
 }
