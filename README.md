@@ -22,6 +22,8 @@ parse('2016:07:11 21:33:20') //=> Date('2016-07-11T21:33:20.000Z')
 format(new Date('2016-07-11T21:33:20.000Z')) //=> '2016:07:11 21:33:20'
 ```
 
+**P.S.** Also parses sub-second precision and timezone offsets.
+
 ## License
 
 Apache 2.0
