@@ -1,13 +1,23 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "rootDir": "src",
     "outDir": "dist",
+    "rootDir": "src",
     "module": "commonjs",
+    "moduleResolution": "node",
     "declaration": true,
     "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "removeComments": true,
     "sourceMap": true,
     "inlineSources": true
-  }
+  },
+  "include": [
+    "src/**/*",
+    "typings/**/*"
+  ]
 }

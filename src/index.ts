@@ -25,7 +25,7 @@ export function parse (value: string): Date {
   const m = DATE_REGEXP.exec(value)
 
   if (m == null) {
-    return
+    return new Date(NaN)
   }
 
   const date = new Date()
@@ -47,7 +47,7 @@ export function parse (value: string): Date {
  */
 export function format (value: Date, subsecond?: boolean, timezone?: boolean): string {
   if (isNaN(value.getTime())) {
-    return
+    return ''
   }
 
   const date = `${pad(value.getUTCFullYear(), 4)}:${pad(value.getUTCMonth() + 1)}:${pad(value.getUTCDate())}`
