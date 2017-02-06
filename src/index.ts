@@ -1,6 +1,6 @@
 const DATE_REGEXP = new RegExp(
   '^(\\d{4}):(\\d{2}):(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})' +
-  '(?:\\.(\\d{2}))?(?:([zZ])|([-+])(\\d{2}):(\\d{2}))?$'
+  '(?:\\.(\\d{1,3}))?(?:([zZ])|([-+])(\\d{2}):(\\d{2}))?$'
 )
 
 /**
@@ -37,7 +37,7 @@ export function parse (value: string): Date {
   date.setUTCHours(Number(m[4]))
   date.setUTCMinutes(Number(m[5]) + offset)
   date.setUTCSeconds(Number(m[6]))
-  date.setUTCMilliseconds((Number(m[7]) * 10) || 0)
+  date.setUTCMilliseconds(Number(m[7]) || 0)
 
   return date
 }
