@@ -1,11 +1,10 @@
 # Exif Date
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/exif-date.svg)](https://greenkeeper.io/)
-
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
+[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/exif-date.svg)](https://greenkeeper.io/)
 
 > Parse an EXIF date string into a `Date` object.
 
