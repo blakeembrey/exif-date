@@ -1,6 +1,6 @@
 {
   "name": "exif-date",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Parse an EXIF date string into a `Date` object",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
