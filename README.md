@@ -4,7 +4,6 @@
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
-[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/exif-date.svg)](https://greenkeeper.io/)
 
 > Parse an EXIF date string into a `Date` object.
 
@@ -17,13 +16,11 @@ npm install exif-date --save
 ## Usage
 
 ```js
-import { parse, format } from 'exif-date'
+import { parse, format } from "exif-date";
 
-parse('2016:07:11 21:33:20') //=> Date('2016-07-11T21:33:20.000Z')
-format(new Date('2016-07-11T21:33:20.000Z')) //=> '2016:07:11 21:33:20'
+parse("2016:07:11 21:33:20"); //=> Date('2016-07-11T21:33:20.000Z')
+format(new Date("2016-07-11T21:33:20.000Z")); //=> '2016:07:11 21:33:20'
 ```
-
-**P.S.** Also parses sub-second precision and timezone offsets. Invalid attempts at parsing will return an invalid date. Invalid format attempts will return an empty string.
 
 ## License
 
