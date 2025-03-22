@@ -32,7 +32,7 @@ export function parse(value: string): Date {
   const offset = m[8]
     ? 0
     : m[9]
-    ? (Number(m[10]) * 60 + Number(m[11])) * (m[9] === "+" ? 1 : -1)
+    ? (Number(m[10]) * 60 + Number(m[11])) * (m[9] === "+" ? -1 : 1)
     : 0;
 
   date.setUTCFullYear(Number(m[1]));
