@@ -1,6 +1,6 @@
 const DATE_REGEXP = new RegExp(
   "^(\\d{4}):(\\d{2}):(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})" +
-    "(?:\\.(\\d{1,3}))?(?:([zZ])|([-+])(\\d{2}):(\\d{2}))?$"
+    "(?:\\.(\\d{1,3}))?(?:([zZ])|([-+])(\\d{2}):(\\d{2}))?$",
 );
 
 /**
@@ -32,8 +32,8 @@ export function parse(value: string): Date {
   const offset = m[8]
     ? 0
     : m[9]
-    ? (Number(m[10]) * 60 + Number(m[11])) * (m[9] === "+" ? -1 : 1)
-    : 0;
+      ? (Number(m[10]) * 60 + Number(m[11])) * (m[9] === "+" ? -1 : 1)
+      : 0;
 
   date.setUTCFullYear(Number(m[1]));
   date.setUTCMonth(Number(m[2]) - 1);
@@ -52,7 +52,7 @@ export function parse(value: string): Date {
 export function format(
   value: Date,
   subsecond?: boolean,
-  timezone?: boolean
+  timezone?: boolean,
 ): string {
   if (isNaN(value.getTime())) return "";
 
