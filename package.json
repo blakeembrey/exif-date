@@ -1,6 +1,6 @@
 {
   "name": "exif-date",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Parse an EXIF date string into a `Date` object",
   "keywords": [
     "exif",
